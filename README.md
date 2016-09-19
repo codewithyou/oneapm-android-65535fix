@@ -20,6 +20,7 @@ OneApmAgent.init(this.getApplicationContext()).setToken(TOKEN).start();
 ##使用方法
 
 * 拷贝示例工程（OneAPM-Test-fix65535-Project）下面的assets/oneapm的onepam目录到您的工程的assets目录
+* 拷贝示例工程（OneAPM-Test-fix65535-Project）下面的oneapm-fix65535.jar到您工程的libs目录，并添加到build path中
 * 拷贝示例工程（OneAPM-Test-fix65535-Project）下面的libs下面的onepam-android-agent.jar文件到您的libs目录，并添加到build path中
 * 自定义继承自android.app.Application;的Application类重写attachBaseContext方法！并调用AgentUtil.init(this,"oneapm/oneapm-agent.jar");
 * 在Application的onCreate方法中调用启动OneAPM的代码 OneApmAgent.init(this.getApplicationContext()).setToken(TOKEN).start(); （TOKEN请到[OneAPM](http://www.oneapm.com)申请）
