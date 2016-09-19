@@ -3,7 +3,7 @@ package com.oneapm.agent.android.delayload;
 import android.content.Context;
 import android.util.Log;
 
-import com.oneapm.agent.android.OneApmAgent;
+//import com.oneapm.agent.android.OneApmAgent;
 import dalvik.system.DexClassLoader;
 
 import java.io.File;
@@ -59,8 +59,10 @@ public class AgentUtil {
     /**
      *  optional method ,to start oneapm agent !
      *  use if oneapm-android-agent.jar not exists in libs directory !
-     * @param loader
      * @param context
+     * @param token
+     * @param host
+     * @param useSsl
      */
     public static void startOneAPM(Context context,String token,String host ,boolean useSsl) {
         try {

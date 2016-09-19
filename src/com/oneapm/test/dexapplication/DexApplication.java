@@ -1,6 +1,6 @@
 package com.oneapm.test.dexapplication;
 
-import com.oneapm.agent.android.OneApmAgent;
+//import com.oneapm.agent.android.OneApmAgent;
 import com.oneapm.agent.android.delayload.AgentUtil;
 import android.app.Application;
 import android.content.Context;
@@ -31,7 +31,7 @@ public class DexApplication extends Application {
 		//simple place a oneapm-android-agent.jar in libs directory ! the  oneapm-android-agent.jar must match /assets/oneapm/oneapm-agent.jar
 		//for more information ,join QQ group :485379471   OR  email:haoqqemail@qq.com
 		//
-		OneApmAgent.init(this.getApplicationContext()).setToken(TOKEN).start();
+		//OneApmAgent.init(this.getApplicationContext()).setToken(TOKEN).start();
 
 		//start OneApm with token and host
 		//OneApmAgent.init(this.getApplicationContext()).setHost(HOST).setToken(TOKEN).start();
