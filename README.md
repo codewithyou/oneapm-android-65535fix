@@ -74,8 +74,8 @@ public class DexApplication extends Application {
 
 ##关于作者
 
-```javascript
-  var author = {
+```java
+  class author  {
     nickName  : "美一天",
     email : "haoqqemail@qq.com"
   }
