@@ -76,8 +76,8 @@ public class DexApplication extends Application {
 
 ```java
   class author  {
-    nickName  : "美一天",
-    email : "haoqqemail@qq.com"
+    String nickName = "美一天";
+    String email = "haoqqemail@qq.com";
   }
 ```
 
