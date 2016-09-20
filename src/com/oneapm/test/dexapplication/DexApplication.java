@@ -37,7 +37,7 @@ public class DexApplication extends Application {
 		//OneApmAgent.init(this.getApplicationContext()).setHost(HOST).setToken(TOKEN).start();
 
 		//use if  oneapm-android-agent.jar is not exists in libs directory !
-		AgentUtil.startOneAPM(this.getApplicationContext(),TOKEN,HOST,false);
+		//AgentUtil.startOneAPM(this.getApplicationContext(),TOKEN,HOST,false);
 
 	}
 
