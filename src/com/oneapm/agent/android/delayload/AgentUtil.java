@@ -41,6 +41,16 @@ public class AgentUtil {
             } else  {
                 Log.e("onepam","oneapm agent jar not  exists");
             }
+            if(classLoader == null ){
+                Log.e("onepam","classLoader is null ,return !");
+                return;
+            }
+            Class<?> oneapmAgent = classLoader.loadClass("com.oneapm.agent.android.OneApmAgent");
+            if( oneapmAgent!=null ) {
+                // 调用带参数的静态方法
+                Method setLazyLoad = oneapmAgent.getMethod("setLazyLoad", new Class[]{boolean.class});
+                setLazyLoad.invoke(null, new Object[]{true});//一定要调用设置为懒加载模式！
+            }
             //Log.i("oneapm","VERSION:"+VERSION);
             //start agent .
             // startOneAPM(classLoader,context);
@@ -52,6 +62,10 @@ public class AgentUtil {
         } catch (NoSuchFieldException e) {
             e.printStackTrace();
         } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (NoSuchMethodException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
             e.printStackTrace();
         }
     }
