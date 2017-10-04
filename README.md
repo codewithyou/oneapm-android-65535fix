@@ -1,13 +1,13 @@
 # oneapm-android-65535fix
 
-##这个项目主要解决什么问题的？
+## 这个项目主要解决什么问题的？
 主要是解决用户在使用oneapm的过程中由于自身的project已经方法数很多了，方法数已经到了65535的临界值，一旦加入oneapm的
 功能之后，就开始报 65535的错误！为此，我们参考了[NuWa](https://github.com/jasonross/Nuwa)的做法设计了一个解决方案。
 
 向NuWa致敬！
 
 
-##核心原理
+## 核心原理
 * 方法数超过限制的核心原因就是编译过程中dx工具在处理和优化dex的过程中会把方法数缓存到一个short类型的变量中存储，一旦方法数超过short
 的长度就会报错！所以，这里的核心思路就是避开编译期加载和编译，换成在APK启动的过程中加载探针和启动探针。
 * 另外,为了让开发者在启动探针的时候向正常方式一样，我们提供了一个oneapm-android-agent.jar的fake的jar包放在libs目录，开发者可以很方便的调用
@@ -17,7 +17,7 @@ OneApmAgent.init(this.getApplicationContext()).setToken(TOKEN).start();
 ```
 
 
-##使用方法
+## 使用方法
 
 * 拷贝示例工程（OneAPM-Test-fix65535-Project）下面的assets/oneapm的onepam目录到您的工程的assets目录
 * 拷贝示例工程（OneAPM-Test-fix65535-Project）下面的oneapm-fix65535.jar到您工程的libs目录，并添加到build path中
@@ -61,7 +61,7 @@ public class DexApplication extends Application {
 
 ```
 
-##注意事项
+## 注意事项
 * 如果使用jar包的方式启动oneapm需要在libs下面放置oneapm-android-agent.jar文件，并且这个问题要和assets/oneapm下面的的jar包对应
 * 如果不在libs下面放置jar包启动oneapm，可以调用AgentUtil.startOneAPM(this.getApplicationContext(),TOKEN,HOST,false);启动
 * 这个工程只是解决65535问题，oneapm 官方的android打包插件等正常流程依旧，不受这个影响。
@@ -73,7 +73,7 @@ public class DexApplication extends Application {
 
 
 
-##关于作者
+## 关于作者
 
 ```java
   class author  {
